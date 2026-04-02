@@ -26,7 +26,7 @@ export const ReportHero = ({ report: r, siteUrl, onCopy, onNewScan }: Props) => 
   };
 
   return (
-    <section className="pt-28 pb-8 px-[5%] text-center">
+    <section style={{ padding: "7rem 5% 2rem", background: "transparent", textAlign: "center" }}>
       {/* Back link */}
       <Link
         to="/"
@@ -40,87 +40,138 @@ export const ReportHero = ({ report: r, siteUrl, onCopy, onNewScan }: Props) => 
 
       {/* Screenshot */}
       {r.screenshot && (
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6">
           <img
             src={r.screenshot}
             alt="Screenshot do site"
-            className="w-[220px] h-auto"
             style={{
-              borderRadius: "14px",
+              width: 220,
+              borderRadius: 14,
               border: "1px solid rgba(255,107,53,0.3)",
-              boxShadow: "0 10px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,107,53,0.1)",
+              boxShadow: "0 16px 48px rgba(0,0,0,0.5), 0 0 30px rgba(255,107,53,0.15)",
             }}
           />
         </div>
       )}
 
-      {/* Score */}
+      {/* Label */}
       <p
-        className="uppercase font-medium mb-2"
-        style={{ fontSize: "0.78rem", letterSpacing: "2.5px", color: "rgba(255,255,255,0.4)" }}
+        style={{
+          fontSize: "0.78rem",
+          letterSpacing: "2.5px",
+          textTransform: "uppercase",
+          color: "rgba(255,255,255,0.4)",
+          marginBottom: "0.5rem",
+        }}
       >
         Diagnóstico de Marca · BrandScan
       </p>
+
+      {/* Score */}
       <div className="flex items-baseline justify-center gap-1 mb-3">
         <span
-          className="font-display font-black"
           style={{
+            fontFamily: "'Montserrat', sans-serif",
             fontSize: "clamp(5rem, 12vw, 9rem)",
+            fontWeight: 900,
             background: "linear-gradient(135deg, #FF6B35, #FFD600)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
           }}
         >
           {r.score}
         </span>
         <span style={{ fontSize: "2rem", color: "rgba(255,255,255,0.3)", fontWeight: 500 }}>/10</span>
       </div>
+
+      {/* Headline */}
       <p
-        className="font-semibold max-w-[700px] mx-auto text-foreground"
-        style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)" }}
+        style={{
+          fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)",
+          fontWeight: 600,
+          color: "#fff",
+          maxWidth: 700,
+          margin: "0 auto",
+          lineHeight: 1.5,
+        }}
       >
         {r.headline}
       </p>
 
       {/* Action bar */}
       <div className="flex flex-wrap justify-center gap-3 mt-8">
+        {/* Copy */}
         <button
           onClick={handleCopy}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm border transition-colors"
+          className="flex items-center gap-2 transition-all"
           style={{
-            borderColor: "rgba(255,255,255,0.15)",
+            padding: "0.5rem 1rem",
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            borderRadius: 8,
+            background: "transparent",
+            border: "1.5px solid rgba(255,255,255,0.15)",
             color: "rgba(255,255,255,0.7)",
-            background: "rgba(255,255,255,0.04)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "#FF6B35";
+            e.currentTarget.style.color = "#FF6B35";
+            e.currentTarget.style.background = "rgba(255,107,53,0.06)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+            e.currentTarget.style.background = "transparent";
           }}
         >
-          {copied ? (
-            <>✅ Copiado!</>
-          ) : (
-            <>
-              <i className="fi fi-rr-copy text-xs" /> Copiar relatório
-            </>
+          {copied ? "✅ Copiado!" : (
+            <><i className="fi fi-rr-copy" style={{ fontSize: 14 }} /> Copiar relatório</>
           )}
         </button>
+
+        {/* WhatsApp */}
         <button
           onClick={shareWhatsApp}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm border transition-colors hover:bg-[rgba(46,213,115,0.1)]"
+          className="flex items-center gap-2 transition-all"
           style={{
-            borderColor: "rgba(46,213,115,0.3)",
-            color: "#2ed573",
+            padding: "0.5rem 1rem",
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            borderRadius: 8,
             background: "transparent",
+            border: "1.5px solid rgba(46,213,115,0.3)",
+            color: "#2ed573",
           }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(46,213,115,0.08)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
         >
-          <i className="fi fi-brands-whatsapp text-xs" /> WhatsApp
+          <i className="fi fi-brands-whatsapp" style={{ fontSize: 14 }} /> WhatsApp
         </button>
+
+        {/* Nova análise */}
         <button
           onClick={onNewScan}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium transition-colors"
+          className="flex items-center gap-2 transition-all"
           style={{
-            background: "#FF6B35",
+            padding: "0.5rem 1rem",
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            borderRadius: 8,
+            background: "linear-gradient(135deg, #FF6B35, #FF2E2E)",
+            border: "none",
             color: "#fff",
           }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-1px)";
+            e.currentTarget.style.boxShadow = "0 6px 18px rgba(255,107,53,0.35)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
         >
-          <i className="fi fi-rr-refresh text-xs" /> Nova análise
+          <i className="fi fi-rr-refresh" style={{ fontSize: 14 }} /> Nova análise
         </button>
       </div>
     </section>

@@ -2,58 +2,50 @@ import { Link } from "react-router-dom";
 import logoMark from "@/assets/logo-mark.png";
 
 export const DiagnosticoFooter = () => (
-  <footer className="border-t border-[rgba(255,255,255,0.07)] py-12 mt-8">
-    <div className="container px-4 md:px-8">
+  <footer style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "3rem", paddingBottom: "3rem", marginTop: "2rem" }}>
+    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <img src={logoMark} alt="E-TOMIC" className="w-7 h-7" />
-            <span className="font-display font-bold text-gradient-primary">E-TOMIC</span>
-          </div>
-          <p className="text-sm font-display font-semibold text-foreground/80 mb-1">O Resgate Atômico de Receita</p>
-          <p className="text-xs text-muted-foreground">Especialistas em Automação e LTV para E-commerce</p>
+          <Link to="/" className="flex items-center gap-2 mb-3">
+            <img src={logoMark} alt="E-TOMIC" style={{ width: 40, height: 40 }} />
+            <span style={{ fontFamily: "'Montserrat',sans-serif", fontWeight: 700, color: "#FF6B35", fontSize: "1.1rem" }}>E-TOMIC</span>
+          </Link>
+          <p className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.8)", marginBottom: 4 }}>O Resgate Atômico de Receita</p>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Especialistas em Automação e LTV para E-commerce</p>
         </div>
 
         {/* Contato */}
         <div>
-          <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-bold">Contato</h4>
+          <h4 style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", fontWeight: 700, marginBottom: 12 }}>Contato</h4>
           <ul className="space-y-2 text-sm">
-            <li>
-              <a href="mailto:contato@e-tomic.com" className="text-muted-foreground hover:text-primary transition-colors">
-                contato@e-tomic.com
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                WhatsApp
-              </a>
-            </li>
+            <li><a href="mailto:contato@e-tomic.com" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>contato@e-tomic.com</a></li>
+            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>WhatsApp</a></li>
           </ul>
         </div>
 
         {/* Páginas */}
         <div>
-          <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-bold">Páginas</h4>
+          <h4 style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", fontWeight: 700, marginBottom: 12 }}>Páginas</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
+            <li><Link to="/" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>Home</Link></li>
           </ul>
         </div>
 
         {/* Serviços */}
         <div>
-          <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-bold">Serviços</h4>
+          <h4 style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", fontWeight: 700, marginBottom: 12 }}>Serviços</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/#servicos" className="text-muted-foreground hover:text-primary transition-colors">Regra #1 – Carrinho Abandonado</Link></li>
-            <li><Link to="/#servicos" className="text-muted-foreground hover:text-primary transition-colors">Regra #2 – Pós-Compra</Link></li>
-            <li><Link to="/#servicos" className="text-muted-foreground hover:text-primary transition-colors">Regra #3 – Reativação</Link></li>
-            <li><Link to="/#servicos" className="text-muted-foreground hover:text-primary transition-colors">Regra #4 – Recompra Recorrente</Link></li>
+            <li><Link to="/#servicos" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>Regra #1 – Carrinho Abandonado</Link></li>
+            <li><Link to="/#servicos" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>Regra #2 – Pós-Compra</Link></li>
+            <li><Link to="/#servicos" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>Regra #3 – Reativação</Link></li>
+            <li><Link to="/#servicos" className="transition-colors hover:text-[#FF6B35]" style={{ color: "rgba(255,255,255,0.5)" }}>Regra #4 – Recompra Recorrente</Link></li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-[rgba(255,255,255,0.07)] pt-6 text-center">
-        <p className="text-xs text-muted-foreground">© 2025 E-TOMIC. Todos os direitos reservados.</p>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: "1.5rem", textAlign: "center" }}>
+        <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)" }}>© 2025 E-TOMIC. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>

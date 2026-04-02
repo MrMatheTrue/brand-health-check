@@ -24,7 +24,7 @@ export const BrandScanReport = ({ result, siteUrl, onNewScan }: Props) => {
     <div>
       <ReportHero report={r} siteUrl={siteUrl} onCopy={copyReport} onNewScan={onNewScan} />
       <ReportSections report={r} />
-      <div className="max-w-[1100px] mx-auto px-4">
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 5%" }}>
         <ReportCTA siteUrl={siteUrl} />
       </div>
     </div>

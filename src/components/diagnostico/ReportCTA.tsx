@@ -6,23 +6,35 @@ export const ReportCTA = ({ siteUrl }: Props) => {
   );
 
   return (
-    <div className="text-center py-12 border-t" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-      <h2 className="text-2xl font-display font-bold mb-2">
-        Próximo passo: <span className="text-gradient-primary">acelere sua marca</span>
+    <div style={{ textAlign: "center", padding: "3rem 0", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+      <h2 style={{ fontSize: "1.5rem", fontFamily: "'Montserrat',sans-serif", fontWeight: 700, marginBottom: "0.5rem" }}>
+        Próximo passo:{" "}
+        <span
+          style={{
+            background: "linear-gradient(135deg, #FF9E00, #FF6B35, #FF2E2E)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          acelere sua marca
+        </span>
       </h2>
-      <p className="text-muted-foreground mb-8">
+      <p style={{ color: "rgba(255,255,255,0.55)", marginBottom: "2rem" }}>
         A E-TOMIC pode estruturar um plano de ação completo baseado neste diagnóstico.
       </p>
       <a
         href={`https://wa.me/5511999999999?text=${waText}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 font-semibold text-lg transition-transform hover:-translate-y-0.5"
+        className="inline-flex items-center gap-3 font-bold transition-transform hover:-translate-y-1"
         style={{
           background: "linear-gradient(135deg, #FF6B35, #FF2E2E)",
           color: "#fff",
-          borderRadius: "50px",
+          borderRadius: 50,
           padding: "1.1rem 2.8rem",
+          fontSize: "1.05rem",
+          textDecoration: "none",
           boxShadow: "0 10px 30px rgba(255,107,53,0.4)",
         }}
       >
