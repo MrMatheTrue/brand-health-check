@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import etomicIcon from "@/assets/etomic-icon.png";
+import logoMark from "@/assets/logo-mark.png";
 import { BrandScanForm } from "@/components/diagnostico/BrandScanForm";
 import { BrandScanLoading } from "@/components/diagnostico/BrandScanLoading";
 import { BrandScanReport } from "@/components/diagnostico/BrandScanReport";
+import { DiagnosticoFooter } from "@/components/diagnostico/DiagnosticoFooter";
 import type { BrandScanResult } from "@/components/diagnostico/types";
 
 const DiagnosticoPage = () => {
@@ -38,23 +39,19 @@ const DiagnosticoPage = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/30">
         <div className="container flex items-center justify-between h-16 px-4 md:px-8">
           <Link to="/" className="flex items-center gap-2">
-            <img src={etomicIcon} alt="E-TOMIC" className="w-8 h-8" />
+            <img src={logoMark} alt="E-TOMIC" className="w-7 h-7" />
             <span className="text-xl font-display font-bold text-gradient-primary">E-TOMIC</span>
           </Link>
-          {/* Progress indicator */}
-          <div className="flex items-center gap-4 text-sm">
-            <span className={`font-medium ${phase === "form" ? "text-primary" : "text-muted-foreground"}`}>
-              1. URL
-            </span>
-            <div className="flex-1 h-0.5 w-16 md:w-32 bg-border/30 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-primary rounded-full transition-all duration-700"
-                style={{ width: phase === "form" ? "50%" : "100%" }}
-              />
-            </div>
-            <span className={`font-medium ${phase === "report" ? "text-primary" : "text-muted-foreground"}`}>
-              2. Relatório
-            </span>
+          <div className="flex items-center gap-4">
+            <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden md:inline">
+              Home
+            </Link>
+            <Link
+              to="/"
+              className="text-sm font-medium px-4 py-2 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+            >
+              Novo Diagnóstico
+            </Link>
           </div>
         </div>
       </nav>
@@ -98,6 +95,8 @@ const DiagnosticoPage = () => {
           )}
         </AnimatePresence>
       </div>
+
+      <DiagnosticoFooter />
     </div>
   );
 };
