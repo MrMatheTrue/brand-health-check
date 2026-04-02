@@ -100,3 +100,15 @@
     pointer-events: none;
   }
 }
+
+/* Diagnostico responsive */
+@media (max-width: 700px) {
+  .diag-two-col { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 800px) {
+  .diag-viz-row { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 600px) {
+  .diag-op-header span:nth-child(2),
+  .diag-op-header span:nth-child(3) { display: none !important; }
+}
